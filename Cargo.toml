@@ -1,0 +1,28 @@
+[package]
+name = "mdi"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "mdi-cli"
+path = "src/main.rs"
+
+[lib]
+name = "mdi"
+path = "src/lib.rs"
+crate-type = ["lib"]
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+
+[[bench]]
+name = "fibonacci"
+harness = false
+
+[dependencies]
+
+[dev-dependencies]
+criterion =  { version = "0.8", features = ["html_reports"] }
