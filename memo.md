@@ -19,6 +19,8 @@
 - anyhow 方便使用Error
 - thiserror 自定义错误
 - tempfile 管理临时文件
+- socket2
+- io_uring
 
 ## dev
 

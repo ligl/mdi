@@ -1,0 +1,9 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "killall": true,
+        "cargo test": true,
+        "cargo check": true,
+        "cargo tarpaulin": true,
+        "cargo install": true
+    }
+}

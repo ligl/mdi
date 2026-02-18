@@ -1,7 +1,7 @@
 [package]
 name = "mdi"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [[bin]]
 name = "mdi-cli"
@@ -22,7 +22,42 @@ opt-level = 3
 name = "fibonacci"
 harness = false
 
+[[bench]]
+name = "mdi_bench"
+harness = false
+
 [dependencies]
+# Async Runtime & Concurrency
+tokio = { version = "1.40", features = ["full"] }
+crossbeam = "0.8"
+parking_lot = "0.12"
+futures = "0.3"
+
+# Serialization & Data
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+
+# HTTP & WebSocket
+reqwest = { version = "0.11", features = ["json"] }
+tokio-tungstenite = "0.23"
+
+# Storage
+rocksdb = "0.22"
+
+# Error Handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Logging & Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+log = "0.4"
+
+# System-level APIs
+libc = "0.2"
+num_cpus = "1.16"
 
 [dev-dependencies]
 criterion =  { version = "0.8", features = ["html_reports"] }
+tempfile = "3.8"
